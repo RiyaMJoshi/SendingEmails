@@ -29,16 +29,29 @@ class EmailController extends AbstractController
             ->to(new Address('riyajoshi.190673107028@gmail.com', 'Riya'))
             ->subject('Your order has been placed')
             ->textTemplate('emails/order-confirmation.txt.twig')
-            ->htmlTemplate('emails/order-confirmation.html.twig')
-            ->attachFromPath($publicDir . '/pdf/sfcasts_api_part-2-security.pdf')
+            //->htmlTemplate('emails/order-confirmation.html.twig')
+            ->htmlTemplate('emails/welcome.html.twig')
+            ->attachFromPath($publicDir . '/pdf/sfcasts_api_part-2-security.pdf', 'Security Certificate')
+            //->embed(fopen('build/images/email/logo.png', 'r'), 'logo')
             ->context([
                 'delivery_date' => date_create('+3 days'),
                 'order_number' => rand(5, 50000)
             ]);
+            //->html('<img src="cid:logo">');
 
         $mailer->send($email);
 
         return new Response('Email sent');
+    }
+
+    /**
+     * @Route("/home", name="app_home")
+     */
+    public function index(): Response
+    {
+        return $this->render('welcome/index.html.twig', [
+            'controller_name' => 'WelcomeController',
+        ]);
     }
 }
 
