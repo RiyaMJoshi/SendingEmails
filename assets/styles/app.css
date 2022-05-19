@@ -1,0 +1,37 @@
+@import "~bootstrap";
+body {
+    background-color: lightgray;
+}
+
+.btn-home {
+    background-color: rgb(12, 48, 80);
+    color: #fff;
+}
+
+footer {
+    background-color: rgb(18, 56, 80);
+}
+
+.my-table {
+    --bs-table-bg: transparent;
+    --bs-table-accent-bg: transparent;
+    --bs-table-striped-color: #212529;
+    --bs-table-striped-bg: rgba(0, 0, 0, 0.05);
+    --bs-table-active-color: #212529;
+    --bs-table-active-bg: rgba(0, 0, 0, 0.1);
+    --bs-table-hover-color: #212529;
+    --bs-table-hover-bg: rgba(0, 0, 0, 0.075);
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+    vertical-align: top;
+    border-color: #dee2e6;
+    caption-side: bottom;
+    border-collapse: collapse;
+    display: table;
+    text-indent: initial;
+    border-spacing: 2px;
+}
+
+.my-pdf-table tr:nth-child(odd) td{ background-color:#ccc; }  
+.my-pdf-table tr:nth-child(even) td{ background-color:#777; }
